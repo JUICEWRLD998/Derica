@@ -7,3 +7,4 @@ __pycache__/
 !.env.example
 *.safetensors
 data/wfp/*.csv
+artifacts/

@@ -1,0 +1,17 @@
+{
+ "messages": 18,
+ "billed_rate_usd_per_million": {
+  "prefill": 0.33,
+  "sample": 1.004
+ },
+ "mean_tokens": {
+  "tuned_prompt": 75.5,
+  "few_shot_prompt": 588.5,
+  "completion": 16.3
+ },
+ "usd_per_call": {
+  "derica_lora": 4.13e-05,
+  "base_model_with_few_shot_prompt_same_rates": 0.0002108
+ },
+ "calls_per_dollar_derica_lora": 24213
+}

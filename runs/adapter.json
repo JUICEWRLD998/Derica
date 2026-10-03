@@ -1,0 +1,22 @@
+{
+ "base_model": "Qwen/Qwen3.5-4B",
+ "rank": 16,
+ "tinker_path": "tinker://9b38d6c0-5704-593a-987a-4b9ae42b4ece:train:0/sampler_weights/derica-v2",
+ "file": "derica-v2.tar",
+ "bytes": 145889280,
+ "sha256": "c3e8b7caa0f1678974129b613d4c5c1d71c851fef9b71f5fe3c8c9e690b6f102",
+ "contents": [
+  {
+   "name": "adapter_config.json",
+   "bytes": 934
+  },
+  {
+   "name": "adapter_model.safetensors",
+   "bytes": 145885240
+  },
+  {
+   "name": "checkpoint_complete",
+   "bytes": 0
+  }
+ ]
+}

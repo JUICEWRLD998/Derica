@@ -1,0 +1,39 @@
+{
+ "window": "2026-10-01 to 2026-10-06",
+ "by_type": {
+  "checkpoint": {
+   "events": 1,
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "sampling_prefill": {
+   "events": 4,
+   "tokens": 141065,
+   "usd": 0.0466
+  },
+  "sampling_prefill_cached": {
+   "events": 3,
+   "tokens": 559104,
+   "usd": 0.0369
+  },
+  "sampling_sample": {
+   "events": 4,
+   "tokens": 41318,
+   "usd": 0.0415
+  },
+  "training": {
+   "events": 1,
+   "tokens": 456282,
+   "usd": 0.3363
+  }
+ },
+ "total_usd": 0.4613,
+ "training_events": [
+  {
+   "bucket_start": "2026-10-03T21:00:00+00:00",
+   "tokens": 456282,
+   "usd": 0.3363,
+   "rate_per_million": 0.737
+  }
+ ]
+}
