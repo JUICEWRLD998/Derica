@@ -1,0 +1,29 @@
+{"id": "h-01", "text": "oga rice 50kg don jump to eighty one thousand", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 81000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-02", "text": "beans na 93,500 naira for the 50 kilo", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 93500}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-03", "text": "Gari - 25kg - 27.5k", "kind": "event", "gold": {"item": "garri", "qty": 25, "unit": "kg", "price_ngn": 27500}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-04", "text": "groundnuts 106k, supplier no gree reduce", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 106000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-05", "text": "rice derica now na 1,400", "kind": "event", "gold": {"item": "rice", "qty": 1, "unit": "derica", "price_ngn": 1400}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-06", "text": "sugar 52k a bag", "kind": "out_of_scope", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-07", "text": "Tomato basket 8k", "kind": "out_of_scope", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-08", "text": "palm oil 25 litres 60k", "kind": "out_of_scope", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-09", "text": "Garri 54k + 2k for transport", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 54000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-10", "text": "Rice 50kg: N79,500", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 79500}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-11", "text": "I go sell am 2,600 mudu", "kind": "event", "gold": {"item": "rice", "qty": 1, "unit": "mudu", "price_ngn": 2600}, "source": "synthetic_hand_written_hard2", "context_item": "rice"}
+{"id": "h-12", "text": "how far, wetin be the price now", "kind": "not_price", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-13", "text": "beans don finish, new stock Tuesday", "kind": "not_price", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-14", "text": "I get 40 bags of garri for you", "kind": "not_price", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-15", "text": "rice 100kg na 158k", "kind": "event", "gold": {"item": "rice", "qty": 100, "unit": "kg", "price_ngn": 158000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-16", "text": "Groundnut na 3,900 mudu o", "kind": "event", "gold": {"item": "groundnut", "qty": 1, "unit": "mudu", "price_ngn": 3900}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-17", "text": "bean 25kg 47k", "kind": "event", "gold": {"item": "beans", "qty": 25, "unit": "kg", "price_ngn": 47000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-18", "text": "rice is #76,000 now", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 76000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-19", "text": "garri 1 bag 55,500", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "bag", "price_ngn": 55500}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-20", "text": "e don reach 1,900 derica", "kind": "event", "gold": {"item": "beans", "qty": 1, "unit": "derica", "price_ngn": 1900}, "source": "synthetic_hand_written_hard2", "context_item": "beans"}
+{"id": "h-21", "text": "Pepper 4k per paint", "kind": "out_of_scope", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-22", "text": "Please confirm you receive the transfer", "kind": "not_price", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-23", "text": "gari dey 51k, delivery 2.5k", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 51000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-24", "text": "I buy rice seventy seven thousand last week", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 77000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-25", "text": "Beans 50kg ninety thousand five hundred", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 90500}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-26", "text": "groundnut 98k for 50kg, no be 100k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 98000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-27", "text": "rice price: 80k (50kg bag)", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 80000}, "source": "synthetic_hand_written_hard2"}
+{"id": "h-28", "text": "maize 30k bag", "kind": "out_of_scope", "gold": null, "source": "synthetic_hand_written_hard2"}
+{"id": "h-29", "text": "garri paint na 1,700 now", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "paint", "price_ngn": 1700}, "source": "synthetic_hand_written_hard2"}

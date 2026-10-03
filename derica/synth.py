@@ -100,14 +100,84 @@ def _not_price(rng: random.Random):
     return {"text": text, "kind": "not_price", "gold": None}
 
 
-def generate(n: int, seed: int, exclude: set[str] | None = None) -> list[dict]:
+# --- rich shapes (generate(..., rich=True)) -------------------------------------------
+# More ways people really type a price, and goods Amina does not sell. The out-of-scope
+# goods deliberately exclude the two the hard test set uses (yam, groundnut oil).
+_OTHER_GOODS = ("tomato", "pepper", "sugar", "salt", "onion", "maize", "millet", "palm oil", "plantain", "cassava", "egg")
+_OTHER_TEMPLATES = ("{X} {P} each", "{X} {Q}kg {P}", "{X} na {P} today", "{X} {P} per bag", "Abeg {X} price na {P}")
+_FEE_TEMPLATES = ("{I} {Q}kg, {P}, delivery {D} extra", "{I} {Q}kg {P} plus {D} for delivery", "{I} {P} for {Q}kg, delivery na {D}")
+_SPELLINGS = {"garri": ("garri", "gari"), "beans": ("beans", "bean"), "groundnut": ("groundnut", "groundnuts"), "rice": ("rice",)}
+_ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+_TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+
+
+def _words_thousand(thousands: int) -> str:
+    if thousands < 20:
+        return _ONES[thousands]
+    if thousands < 100:
+        tens, ones = divmod(thousands, 10)
+        return _TENS[tens] + (f" {_ONES[ones]}" if ones else "")
+    hundreds, rest = divmod(thousands, 100)
+    return f"{_ONES[hundreds]} hundred" + (f" {_words_thousand(rest)}" if rest else "")
+
+
+def _rich_price(rng: random.Random, naira: int) -> str:
+    roll = rng.random()
+    if roll < 0.15:
+        return f"N{naira:,}"
+    if roll < 0.28:
+        return f"{naira:,} naira"
+    if roll < 0.36:
+        return f"#{naira:,}"
+    if roll < 0.46 and naira % 1000 == 0:
+        return f"{_words_thousand(naira // 1000)} thousand"
+    return _price_text(rng, naira)
+
+
+def _rich_event(rng: random.Random):
+    item = rng.choice(ITEMS)
+    spelled = rng.choice(_SPELLINGS[item])
+    roll = rng.random()
+    if roll < 0.2:
+        row = _event(rng)
+        return row
+    qty = rng.choice((50, 50, 50, 25, 100))
+    price = _round_to(rng.uniform(*_KG50[item]) * qty / 50, 500)
+    if roll < 0.45:
+        fee = rng.choice((1000, 1500, 2000, 3000, 5000))
+        text = rng.choice(_FEE_TEMPLATES).format(
+            I=_casing(rng, spelled), Q=qty, P=_price_text(rng, price), D=_price_text(rng, fee))
+        return {"text": text, "kind": "event", "gold": {"item": item, "qty": qty, "unit": "kg", "price_ngn": price}}
+    kilo = rng.choice((f"{qty}kg", f"{qty} kilo", f"{qty}kgs", f"{qty} kg bag"))
+    template = rng.choice((
+        "{I} {K} {P}", "{I} {P} for {K}", "{I} na {P} for {K}", "{P} for {I} ({K})", "price of {i} for {K} is {P}",
+        "{I} - {K} - {P}", "{I}: {P} / {K}", "{I} {K} don become {P}", "I buy {i} {P} yesterday",
+    ))
+    if "{K}" not in template:
+        qty, kilo = 50, ""
+        price = _round_to(rng.uniform(*_KG50[item]), 500)
+    text = template.format(I=_casing(rng, spelled), i=spelled, K=kilo, P=_rich_price(rng, price))
+    return {"text": text, "kind": "event", "gold": {"item": item, "qty": qty, "unit": "kg", "price_ngn": price}}
+
+
+def _out_of_scope(rng: random.Random):
+    text = rng.choice(_OTHER_TEMPLATES).format(
+        X=_casing(rng, rng.choice(_OTHER_GOODS)), Q=rng.choice((5, 10, 25, 50)), P=_price_text(rng, rng.choice((2000, 3500, 5000, 12000, 18000, 45000))))
+    return {"text": text, "kind": "out_of_scope", "gold": None}
+
+
+def generate(n: int, seed: int, exclude: set[str] | None = None, rich: bool = False) -> list[dict]:
     rng = random.Random(seed)
     seen = {" ".join(t.lower().split()) for t in (exclude or ())}
     rows = []
     for _ in range(n * 200):
         if len(rows) == n:
             break
-        row = _not_price(rng) if rng.random() < 0.22 else _event(rng)
+        if rich:
+            roll = rng.random()
+            row = _not_price(rng) if roll < 0.15 else _out_of_scope(rng) if roll < 0.25 else _rich_event(rng) if roll < 0.7 else _event(rng)
+        else:
+            row = _not_price(rng) if rng.random() < 0.22 else _event(rng)
         key = " ".join(row["text"].lower().split())
         if key in seen:
             continue
