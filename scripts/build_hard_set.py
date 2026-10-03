@@ -1,4 +1,4 @@
-"""Write and freeze the hard test set: 40 hand-written messy messages.
+"""Write and freeze the hard test set: 39 hand-written messy messages.
 
 These are SYNTHETIC. I wrote them, not Amina, to stress spellings and layouts that the
 training generator never produced: number words, "#" for naira, typos in the item name,

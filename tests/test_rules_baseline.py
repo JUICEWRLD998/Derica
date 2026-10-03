@@ -56,3 +56,8 @@ def test_the_baseline_scores_on_the_real_message_set():
         if got != want:
             wrong.append(row["id"])
     assert wrong == []
+
+
+def test_a_message_the_rules_cannot_read_returns_none_instead_of_crashing():
+    # "N82,000" glues the currency letter to the number, so the scanner sees a stray "000".
+    assert parse_message("N82,000 for beans (50 kilo)") is None
