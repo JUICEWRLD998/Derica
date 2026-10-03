@@ -19,7 +19,7 @@ def test_forty_five_messages_all_marked_synthetic():
 
 def test_kinds_and_labels_are_consistent():
     rows = load()
-    assert Counter(r["kind"] for r in rows) == {"event": 26, "not_price": 17, "ambiguous": 2}
+    assert Counter(r["kind"] for r in rows) == {"event": 27, "not_price": 16, "ambiguous": 2}
     for r in rows:
         if r["kind"] == "event":
             PriceEvent(**r["gold"])

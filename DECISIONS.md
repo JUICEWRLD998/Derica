@@ -6,7 +6,7 @@ Newest first. Each entry carries what was measured or learned, the alternative t
 
 Three sets of 15 messages arrived labelled "Trader 1/2/3", with a note that they are synthetic examples with fictional prices created for testing. They are stored in `data/synthetic/trader_messages.jsonl` with `source: synthetic_supplied_for_testing`, apart from `data/real/`. They are not real traders and must never be described as such in the post.
 - Labels follow Amina's rules (bare bag-sized price is a 50 kg bag, bag price is a cost). Two messages (`Garri 2,100`, `Groundnut 3,800`) have no unit and no topic, so they are marked ambiguous and excluded from scoring until Amina says what she would read.
-- The rules baseline was frozen before these arrived. It reads 43 of 43 scored messages correctly (26 prices, 17 non-prices).
+- The rules baseline was frozen before these arrived. It reads 43 of 43 scored messages correctly (27 prices, 16 non-prices).
 - Consequence: these messages have the same shape as Amina's, so a regex already solves them. They cannot show a model beating the baseline. A fine-tune needs harder messages (several numbers, mixed units, odd spelling, a price in a sentence) or the honest result is that rules are enough for this message style.
 - Where: `data/synthetic/trader_messages.jsonl`, `tests/test_trader_messages.py`.
 
