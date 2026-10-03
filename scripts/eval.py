@@ -37,13 +37,16 @@ def read(path):
 real = read(DATA / "frozen" / "real_test.jsonl")
 supplied = read(DATA / "frozen" / "supplied_test.jsonl")
 hard = read(DATA / "frozen" / "hard_test.jsonl")
-exclude = {r["text"] for r in real + supplied + hard + read(DATA / "synthetic" / "train.jsonl")}
+hard2 = read(DATA / "frozen" / "hard2_test.jsonl")
+exclude = {r["text"] for r in real + supplied + hard + hard2 + read(DATA / "synthetic" / "train.jsonl")}
 fresh = generate(300, seed=99, exclude=exclude)
-SETS = {"real (Amina, 18)": real, "supplied synthetic (43)": supplied, "fresh generated (300)": fresh, "hard hand-written (39)": hard}
+SETS = {"real (Amina, 18)": real, "supplied synthetic (43)": supplied, "fresh generated (300)": fresh, "hard hand-written (39)": hard, "hard2 hand-written (29)": hard2}
 
 service = tinker.ServiceClient()
 zero_shot = service.create_sampling_client(base_model=BASE)
 derica = service.create_sampling_client(model_path=sampler_path)
+sampler_v2 = json.loads((ROOT / "runs" / "train_run_v2.json").read_text(encoding="utf-8"))["sampler_path"]
+derica_v2 = service.create_sampling_client(model_path=sampler_v2)
 tokenizer = zero_shot.get_tokenizer() if hasattr(zero_shot, "get_tokenizer") else None
 if tokenizer is None:
     tokenizer = service.create_lora_training_client(base_model=BASE, rank=16).get_tokenizer()
@@ -100,6 +103,7 @@ SYSTEMS = {
     "rules baseline": (rules, 1),
     "Qwen3.5-4B + rules and examples in prompt": (tinker_system(zero_shot, build_few_shot_prompt), 8),
     "Derica LoRA (Qwen3.5-4B)": (tinker_system(derica, build_prompt), 8),
+    "Derica LoRA v2 (rich data)": (tinker_system(derica_v2, build_prompt), 8),
     "gpt-oss-120b + rules and examples": (openrouter_system("openai/gpt-oss-120b", build_few_shot_prompt, {"reasoning": {"effort": "low"}}), 6),
     "Gemini 2.5 Flash-Lite + rules and examples": (openrouter_system("google/gemini-2.5-flash-lite", build_few_shot_prompt), 6),
 }

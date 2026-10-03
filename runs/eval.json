@@ -420,6 +420,135 @@
      "got": "null"
     }
    ]
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 18,
+   "invalid": 0,
+   "p50_s": null,
+   "misses": [
+    {
+     "id": "h-01",
+     "text": "oga rice 50kg don jump to eighty one thousand",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 81000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-03",
+     "text": "Gari - 25kg - 27.5k",
+     "want": {
+      "item": "garri",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 27500
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-05",
+     "text": "rice derica now na 1,400",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1400
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-09",
+     "text": "Garri 54k + 2k for transport",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 54000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-10",
+     "text": "Rice 50kg: N79,500",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 79500
+     },
+     "got": "{\"item\": \"rice\", \"qty\": 50, \"unit\": \"kg\", \"price_ngn\": 500}"
+    },
+    {
+     "id": "h-17",
+     "text": "bean 25kg 47k",
+     "want": {
+      "item": "beans",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 47000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-23",
+     "text": "gari dey 51k, delivery 2.5k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 51000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-24",
+     "text": "I buy rice seventy seven thousand last week",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 77000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-25",
+     "text": "Beans 50kg ninety thousand five hundred",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 90500
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-26",
+     "text": "groundnut 98k for 50kg, no be 100k",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 98000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-29",
+     "text": "garri paint na 1,700 now",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 1700
+     },
+     "got": "null"
+    }
+   ]
   }
  },
  "Qwen3.5-4B + rules and examples in prompt": {
@@ -427,7 +556,7 @@
    "n": 18,
    "correct": 1,
    "invalid": 17,
-   "p50_s": 2.34,
+   "p50_s": 2.09,
    "misses": [
     {
      "id": 1,
@@ -587,7 +716,7 @@
    "n": 43,
    "correct": 1,
    "invalid": 42,
-   "p50_s": 2.11,
+   "p50_s": 2.06,
    "misses": [
     {
      "id": "t1-01",
@@ -830,7 +959,7 @@
    "n": 300,
    "correct": 28,
    "invalid": 272,
-   "p50_s": 2.06,
+   "p50_s": 2.03,
    "misses": [
     {
      "id": null,
@@ -1113,7 +1242,7 @@
    "n": 39,
    "correct": 3,
    "invalid": 36,
-   "p50_s": 2.07,
+   "p50_s": 2.05,
    "misses": [
     {
      "id": "h-01",
@@ -1361,6 +1490,249 @@
      "got": "<think>\n\n"
     }
    ]
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 3,
+   "invalid": 25,
+   "p50_s": 2.03,
+   "misses": [
+    {
+     "id": "h-01",
+     "text": "oga rice 50kg don jump to eighty one thousand",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 81000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-03",
+     "text": "Gari - 25kg - 27.5k",
+     "want": {
+      "item": "garri",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 27500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-04",
+     "text": "groundnuts 106k, supplier no gree reduce",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 106000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-05",
+     "text": "rice derica now na 1,400",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1400
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-06",
+     "text": "sugar 52k a bag",
+     "want": null,
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-07",
+     "text": "Tomato basket 8k",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-08",
+     "text": "palm oil 25 litres 60k",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-09",
+     "text": "Garri 54k + 2k for transport",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 54000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-10",
+     "text": "Rice 50kg: N79,500",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 79500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-11",
+     "text": "I go sell am 2,600 mudu",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 2600
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-12",
+     "text": "how far, wetin be the price now",
+     "want": null,
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-13",
+     "text": "beans don finish, new stock Tuesday",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-14",
+     "text": "I get 40 bags of garri for you",
+     "want": null,
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-15",
+     "text": "rice 100kg na 158k",
+     "want": {
+      "item": "rice",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 158000
+     },
+     "got": "158000\n\n"
+    },
+    {
+     "id": "h-16",
+     "text": "Groundnut na 3,900 mudu o",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3900
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-17",
+     "text": "bean 25kg 47k",
+     "want": {
+      "item": "beans",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 47000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-18",
+     "text": "rice is #76,000 now",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 76000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-19",
+     "text": "garri 1 bag 55,500",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 55500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-20",
+     "text": "e don reach 1,900 derica",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1900
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-21",
+     "text": "Pepper 4k per paint",
+     "want": null,
+     "got": " {\"item\":\"pepper\",\"qty\":1,\"unit\":\"paint\",\"price_ngn\":4000}\n\n"
+    },
+    {
+     "id": "h-22",
+     "text": "Please confirm you receive the transfer",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "h-23",
+     "text": "gari dey 51k, delivery 2.5k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 51000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-24",
+     "text": "I buy rice seventy seven thousand last week",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 77000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-25",
+     "text": "Beans 50kg ninety thousand five hundred",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 90500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "h-27",
+     "text": "rice price: 80k (50kg bag)",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 80000
+     },
+     "got": "<think>\n"
+    }
+   ]
   }
  },
  "Derica LoRA (Qwen3.5-4B)": {
@@ -1368,7 +1740,7 @@
    "n": 18,
    "correct": 17,
    "invalid": 0,
-   "p50_s": 2.37,
+   "p50_s": 2.04,
    "misses": [
     {
      "id": 14,
@@ -1387,7 +1759,7 @@
    "n": 43,
    "correct": 42,
    "invalid": 0,
-   "p50_s": 2.7,
+   "p50_s": 2.04,
    "misses": [
     {
      "id": "t2-09",
@@ -1401,7 +1773,7 @@
    "n": 300,
    "correct": 300,
    "invalid": 0,
-   "p50_s": 2.08,
+   "p50_s": 2.04,
    "misses": []
   },
   "hard hand-written (39)": {
@@ -1445,6 +1817,144 @@
      "got": "{\"item\":\"rice\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":81000}\n"
     }
    ]
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 21,
+   "invalid": 2,
+   "p50_s": 2.1,
+   "misses": [
+    {
+     "id": "h-06",
+     "text": "sugar 52k a bag",
+     "want": null,
+     "got": "{\"item\":\"sugar\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":52000}\n"
+    },
+    {
+     "id": "h-07",
+     "text": "Tomato basket 8k",
+     "want": null,
+     "got": "{\"item\":\"tomato\",\"qty\":1,\"unit\":\"basket\",\"price_ngn\":8000}\n"
+    },
+    {
+     "id": "h-08",
+     "text": "palm oil 25 litres 60k",
+     "want": null,
+     "got": "{\"item\":\"palm_oil\",\"qty\":25,\"unit\":\"litre\",\"price_ngn\":60000}\n"
+    },
+    {
+     "id": "h-09",
+     "text": "Garri 54k + 2k for transport",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 54000
+     },
+     "got": "{\"item\":\"garri\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":56000}\n"
+    },
+    {
+     "id": "h-14",
+     "text": "I get 40 bags of garri for you",
+     "want": null,
+     "got": "{\"item\":\"garri\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":40}\n"
+    },
+    {
+     "id": "h-21",
+     "text": "Pepper 4k per paint",
+     "want": null,
+     "got": "{\"item\":\"pepper\",\"qty\":1,\"unit\":\"paint\",\"price_ngn\":4000}\n"
+    },
+    {
+     "id": "h-23",
+     "text": "gari dey 51k, delivery 2.5k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 51000
+     },
+     "got": "{\"item\":\"garri\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":53500}\n"
+    },
+    {
+     "id": "h-28",
+     "text": "maize 30k bag",
+     "want": null,
+     "got": "{\"item\":\"maize\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":30000}\n"
+    }
+   ]
+  }
+ },
+ "Derica LoRA v2 (rich data)": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 18,
+   "invalid": 0,
+   "p50_s": 2.06,
+   "misses": []
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 43,
+   "invalid": 0,
+   "p50_s": 2.04,
+   "misses": []
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 300,
+   "invalid": 0,
+   "p50_s": 2.04,
+   "misses": []
+  },
+  "hard hand-written (39)": {
+   "n": 39,
+   "correct": 35,
+   "invalid": 0,
+   "p50_s": 2.0,
+   "misses": [
+    {
+     "id": "h-02",
+     "text": "abeg beans don reach 95k o, e no easy",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 95000
+     },
+     "got": "null\n"
+    },
+    {
+     "id": "h-10",
+     "text": "how much be your rice?",
+     "want": null,
+     "got": "{\"item\":\"rice\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":15000000}\n"
+    },
+    {
+     "id": "h-17",
+     "text": "Groundnut 104k oo, supplier just call me",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 104000
+     },
+     "got": "null\n"
+    },
+    {
+     "id": "h-26",
+     "text": "groundnut oil 5 litres 18k",
+     "want": null,
+     "got": "{\"item\":\"groundnut\",\"qty\":5,\"unit\":\"kg\",\"price_ngn\":18000}\n"
+    }
+   ]
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 29,
+   "invalid": 0,
+   "p50_s": 2.0,
+   "misses": []
   }
  },
  "gpt-oss-120b + rules and examples": {
@@ -1452,52 +1962,93 @@
    "n": 18,
    "correct": 18,
    "invalid": 0,
-   "p50_s": 1.42,
+   "p50_s": 1.36,
    "misses": []
   },
   "supplied synthetic (43)": {
    "n": 43,
-   "correct": 42,
-   "invalid": 1,
-   "p50_s": 2.11,
-   "misses": [
-    {
-     "id": "t2-13",
-     "text": "2 bags rice available",
-     "want": null,
-     "got": "{\"item\":\"rice\",\"qty\":2,\"unit\":\"bag\",\"price_ngn\":null}"
-    }
-   ]
+   "correct": 43,
+   "invalid": 0,
+   "p50_s": 1.31,
+   "misses": []
   },
   "fresh generated (300)": {
    "n": 300,
-   "correct": 300,
+   "correct": 298,
    "invalid": 0,
-   "p50_s": 1.54,
-   "misses": []
+   "p50_s": 1.71,
+   "misses": [
+    {
+     "id": null,
+     "text": "Groundnut na 220,500 for 100kg",
+     "want": {
+      "item": "groundnut",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 220500
+     },
+     "got": "{\n  \"item\": \"groundnut\",\n  \"qty\": 100,\n  \"unit\": \"kg\",\n  \"price_ngn\": 2205\n}"
+    },
+    {
+     "id": null,
+     "text": "groundnut was 3800 mudu, now 3950",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3950
+     },
+     "got": "{\"item\":\"groundnut\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":3950}"
+    }
+   ]
   },
   "hard hand-written (39)": {
    "n": 39,
-   "correct": 37,
+   "correct": 39,
    "invalid": 0,
-   "p50_s": 1.24,
+   "p50_s": 1.78,
+   "misses": []
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 24,
+   "invalid": 0,
+   "p50_s": 1.52,
    "misses": [
     {
-     "id": "h-08",
-     "text": "Rice 25 kg bag now 41k",
-     "want": {
-      "item": "rice",
-      "qty": 25,
-      "unit": "kg",
-      "price_ngn": 41000
-     },
-     "got": "{\"item\":\"rice\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":41000}"
+     "id": "h-06",
+     "text": "sugar 52k a bag",
+     "want": null,
+     "got": "{\"item\":\"sugar\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":52000}"
     },
     {
-     "id": "h-27",
-     "text": "Yam 5k each",
+     "id": "h-08",
+     "text": "palm oil 25 litres 60k",
      "want": null,
-     "got": "{\n  \"item\": \"yam\",\n  \"qty\": 1,\n  \"unit\": \"kg\",\n  \"price_ngn\": 5000\n}"
+     "got": "{\n  \"item\": \"palm oil\",\n  \"qty\": 25,\n  \"unit\": \"kg\",\n  \"price_ngn\": 60000\n}"
+    },
+    {
+     "id": "h-21",
+     "text": "Pepper 4k per paint",
+     "want": null,
+     "got": "{\"item\":\"pepper\",\"qty\":1,\"unit\":\"paint\",\"price_ngn\":4000}"
+    },
+    {
+     "id": "h-24",
+     "text": "I buy rice seventy seven thousand last week",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 77000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-28",
+     "text": "maize 30k bag",
+     "want": null,
+     "got": "{\"item\":\"maize\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":30000}"
     }
    ]
   }
@@ -1507,21 +2058,21 @@
    "n": 18,
    "correct": 18,
    "invalid": 0,
-   "p50_s": 0.82,
+   "p50_s": 0.78,
    "misses": []
   },
   "supplied synthetic (43)": {
    "n": 43,
    "correct": 43,
    "invalid": 0,
-   "p50_s": 0.81,
+   "p50_s": 0.8,
    "misses": []
   },
   "fresh generated (300)": {
    "n": 300,
    "correct": 299,
    "invalid": 0,
-   "p50_s": 0.84,
+   "p50_s": 0.83,
    "misses": [
     {
      "id": null,
@@ -1540,7 +2091,7 @@
    "n": 39,
    "correct": 36,
    "invalid": 2,
-   "p50_s": 0.85,
+   "p50_s": 0.83,
    "misses": [
     {
      "id": "h-05",
@@ -1564,6 +2115,55 @@
      "text": "Yam 5k each",
      "want": null,
      "got": "{\"item\":\"yam\",\"qty\":1,\"unit\":\"each\",\"price_ngn\":5000}"
+    }
+   ]
+  },
+  "hard2 hand-written (29)": {
+   "n": 29,
+   "correct": 23,
+   "invalid": 2,
+   "p50_s": 0.81,
+   "misses": [
+    {
+     "id": "h-06",
+     "text": "sugar 52k a bag",
+     "want": null,
+     "got": "{\"item\":\"sugar\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":52000}"
+    },
+    {
+     "id": "h-07",
+     "text": "Tomato basket 8k",
+     "want": null,
+     "got": "{\"item\":\"tomato\",\"qty\":1,\"unit\":\"basket\",\"price_ngn\":8000}"
+    },
+    {
+     "id": "h-08",
+     "text": "palm oil 25 litres 60k",
+     "want": null,
+     "got": "{\"item\":\"palm oil\",\"qty\":25,\"unit\":\"litres\",\"price_ngn\":60000}"
+    },
+    {
+     "id": "h-21",
+     "text": "Pepper 4k per paint",
+     "want": null,
+     "got": "{\"item\":\"pepper\",\"qty\":1,\"unit\":\"paint\",\"price_ngn\":4000}"
+    },
+    {
+     "id": "h-24",
+     "text": "I buy rice seventy seven thousand last week",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 77000
+     },
+     "got": "null"
+    },
+    {
+     "id": "h-28",
+     "text": "maize 30k bag",
+     "want": null,
+     "got": "{\"item\":\"maize\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":30000}"
     }
    ]
   }

@@ -46,7 +46,10 @@ _CONVENTIONS = (
     "Rules the seller uses: a bare bag-sized price with no unit, such as 92k, is a 50 kg bag, so unit is kg and qty is 50. "
     "A price per derica, mudu or paint has qty is 1. A price per bag is unit bag and qty is 1. "
     "When the message names no item, use the Topic. Use lowercase item names. "
-    "A message with no price, only a quantity or talk about prices, is null."
+    "A message with no price, only a quantity or talk about prices, is null. "
+    "Only rice, beans, garri and groundnut are sold: any other item (sugar, oil, pepper, tomato) is null. "
+    "A delivery or transport fee is not part of the price. "
+    "Spelled-out numbers count: seventy eight thousand is 78000."
 )
 _SHOTS = (
     ("Rice 50kg 80k today", None, '{"item":"rice","qty":50,"unit":"kg","price_ngn":80000}'),

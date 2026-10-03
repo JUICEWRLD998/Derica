@@ -66,3 +66,10 @@ def test_common_spelling_variants_normalise_to_the_four_items():
     assert [normalize_item(w) for w in ("gari", "Garri", "bean", "Beans", "groundnuts")] == [
         "garri", "garri", "beans", "beans", "groundnut"
     ]
+
+
+def test_the_few_shot_prompt_tells_a_model_about_other_goods_and_fees():
+    from derica.dataset import build_few_shot_prompt
+
+    prompt = build_few_shot_prompt("Rice 50kg 80k", None)
+    assert "any other item" in prompt.lower() and "delivery" in prompt.lower()
