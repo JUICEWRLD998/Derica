@@ -68,4 +68,4 @@ def test_a_full_card_of_four_items_keeps_every_price_above_the_footer():
     full = [{"item": n, "prices": {"derica": 1650, "mudu": 3150, "paint": 13850}} for n in ("rice", "beans", "garri", "groundnut")]
     image = decode(render_card("Amina Grains", "3 Oct 2026", full)).convert("L")
     band = image.crop((0, 1740, 1080, 1800))  # the gap just above the footer text must be empty ground
-    assert min(band.getdata()) > 200
+    assert band.getextrema()[0] > 200
