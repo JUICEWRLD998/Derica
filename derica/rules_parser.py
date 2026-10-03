@@ -18,7 +18,7 @@ _LINE = re.compile(
 )
 
 
-def parse_line(line: str, side: str = "sell") -> PriceEvent:
+def parse_line(line: str) -> PriceEvent:
     match = _LINE.match(line)
     if not match:
         raise ValueError(f"not a price message: {line!r}")
@@ -27,5 +27,4 @@ def parse_line(line: str, side: str = "sell") -> PriceEvent:
         qty=1,
         unit=match.group("unit").lower(),
         price_ngn=parse_naira(match.group("price")),
-        side=side,
     )
