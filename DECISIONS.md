@@ -107,3 +107,23 @@ Result, exact match out of 39:
 - The LoRA's four misses: `Rice 25 kg bag now 41k` came back as unit `bag` (the same slip as the one real miss), `groundnut oil` and `Yam` were read as grain at 50 kg (it was never trained to refuse an item outside the four), and the 3k delivery fee was added to the price (81,000).
 - Two things were fixed after seeing the scores, and both are product fixes, not tuning on the answer: (1) the rules baseline crashed on `N82,000` with a `ValueError`; it now returns `None`. (2) `normalize_item` did not map `gari` to `garri` or `bean` to `beans`, so a correct model reply was scored wrong; it does now. The second fix moved gpt-oss from 36 to 37 and Gemini from 35 to 36. The LoRA and rules scores did not change.
 - Not done: the training data was not changed to cover these messages. Doing that and re-scoring on the same set would measure memory, not skill.
+
+## 2026-10-03: round two, richer training data (v2), and what it does and does not show
+
+Training v2 added 2,000 generated rows to the original 1,500: goods Amina does not sell (labelled null), a delivery or transport fee beside the price, spelling variants (`gari`, `bean`, `groundnuts`), `N`/`#`/`naira` price forms and spelled-out thousands. Same recipe as v1 (Qwen3.5-4B, LoRA rank 16, 3 epochs, 330 steps, 1,114 seconds). I also wrote a second hand-written set of 29 messages, `hard2`, and froze it before the v2 data existed.
+
+The first comparison was unfair to the prompted models: their prompt said nothing about other goods, fees or spelled-out numbers, so they read `sugar 52k a bag` as a price. I added one sentence for each to the prompt, with no test message in it, and reran everything. Scores, exact match:
+
+| System | real 18 | hard 39 | hard2 29 |
+|---|---|---|---|
+| Rules baseline | 18 | 28 | 18 |
+| Derica LoRA v1 | 17 | 35 | 21 |
+| **Derica LoRA v2** | 18 | 35 | 29 |
+| gpt-oss-120b, informed prompt | 18 | 39 | 28 |
+| Gemini 2.5 Flash-Lite, informed prompt | 17 | 38 | 27 |
+
+- v2 fixed what v1 got wrong on hard2 (21 to 29). It did not move on `hard` (35 to 35) and it is still behind gpt-oss on `hard` (35 against 39).
+- **The 29 of 29 is not independent evidence.** I picked the out-of-scope goods for the generator (sugar, pepper, maize, palm oil, tomato) and then used the same goods in hard2. The texts differ, the goods do not. The honest test of refusing an unseen good is `hard`, where `yam` and `groundnut oil` were never in training: v2 refused `yam` and still read `groundnut oil` as groundnut.
+- v2 introduced new errors on `hard`: it returned null for two real prices (`abeg beans don reach 95k o, e no easy` and `Groundnut 104k oo, supplier just call me`), and read `how much be your rice?` as 15,000,000 naira. The 15,000,000 is why the app never trusts a model number without a plausibility check; see Phase 4.
+- OpenRouter models are not fully deterministic at temperature 0: gpt-oss scored 37 then 39 on `hard` across runs with the same prompt. Treat one or two messages as noise.
+- The claim the post can make: a 4B model fine-tuned for about 20 minutes matches prompted 120B and Flash-Lite models on this task to within a few messages, with a prompt a sixth the size, and clearly beats rules on messy text. The claim it cannot make: that it beats them.
