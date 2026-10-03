@@ -24,6 +24,11 @@ def test_every_item_has_a_mudu_that_is_two_dericas(table):
         assert grams(item, "mudu", table) == 2 * grams(item, "derica", table)
 
 
+def test_bag_is_fifty_kg_for_all_four_items(table):
+    for item in ("rice", "beans", "garri", "groundnut"):
+        assert grams(item, "bag", table) == 50_000
+
+
 def test_kg_works_for_any_item_without_calibration(table):
     assert grams("rice", "kg", table) == 1000
     assert grams("yam flour", "kg", table) == 1000
