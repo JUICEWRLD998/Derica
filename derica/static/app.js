@@ -78,6 +78,7 @@ function renderBook() {
     input.addEventListener("change", () => {
       state.picked = item;
       renderBook();
+renderBoards();
     });
     label.append(input, el("span", "", item[0].toUpperCase() + item.slice(1)));
     picker.appendChild(label);
@@ -138,6 +139,14 @@ function fillSample() {
   $("sample-note").hidden = false;
   save();
   renderBook();
+}
+
+function tryExample() {
+  fillSample();
+  $("message").value = "abeg rice na seventy eight thousand for 50kg";
+  $("count").textContent = String($("message").value.length);
+  $("context").value = "";
+  $("read-form").requestSubmit();
 }
 
 /* ---------- reading ---------- */
@@ -292,8 +301,13 @@ function renderBoards(animateItem) {
   const host = $("boards");
   host.replaceChildren();
   if (!state.boards.length) {
-    const empty = el("p", "empty", "Prices you read appear here.");
+    const empty = el("div", "empty");
     empty.id = "boards-empty";
+    empty.appendChild(el("p", "", "Prices you read appear here."));
+    const example = el("button", "quiet", "Try an example");
+    example.type = "button";
+    example.addEventListener("click", tryExample);
+    empty.append(example, el("p", "help", "Fills in a made-up message and made-up stall prices, then reads them."));
     host.appendChild(empty);
     $("card-actions").hidden = true;
     return;
@@ -424,3 +438,4 @@ $("sample-stall").addEventListener("click", fillSample);
 $("card-button").addEventListener("click", makeCard);
 if (window.matchMedia("(min-width: 760px)").matches) $("stall-book").open = true;
 renderBook();
+renderBoards();

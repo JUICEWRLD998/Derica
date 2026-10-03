@@ -37,6 +37,8 @@ body {
   flex-direction: column;
 }
 h1, h2, h3, p, ul, figure { margin: 0; padding: 0; }
+p { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
 ul { list-style: none; }
 [hidden] { display: none !important; }
 
@@ -114,7 +116,7 @@ textarea:focus-visible, input:focus-visible, select:focus-visible, button:focus-
   transition: none;
 }
 textarea[aria-invalid="true"], input[aria-invalid="true"] { border-color: var(--color-loss); }
-textarea:disabled, input:disabled, select:disabled { opacity: 0.55; cursor: not-allowed; }
+textarea:disabled, input:disabled, select:disabled { opacity: 0.55; cursor: not-allowed; border-color: var(--color-rule); }
 
 .form-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3); margin-top: var(--space-2); }
 .field { flex: 1 1 14rem; min-width: 0; }
@@ -146,7 +148,7 @@ button.primary[data-state="success"] { background: color-mix(in oklab, var(--col
 button.quiet, .link-button { background: transparent; color: var(--color-ink); border-color: var(--color-edge); }
 button.quiet:hover, .link-button:hover { border-color: var(--color-ink); background: var(--color-surface); }
 button.quiet:active, .link-button:active { transform: translateY(1px); }
-button:disabled, button[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
+button:disabled, button[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; border-color: var(--color-rule); }
 
 /* Reading */
 .reading { margin-top: var(--space-5); min-height: 1lh; }
@@ -161,7 +163,7 @@ button:disabled, button[aria-disabled="true"] { opacity: 0.55; cursor: not-allow
 .readers li span:first-child { font-weight: 700; }
 
 /* Board: one ruled sheet per item. */
-.board .empty { color: var(--color-muted); border-top: 1px solid var(--color-rule); padding-top: var(--space-4); }
+.board .empty { color: var(--color-muted); border-top: 1px solid var(--color-rule); padding-top: var(--space-4); display: grid; gap: var(--space-3); justify-items: start; }
 .boards { display: grid; gap: var(--space-6); min-width: 0; container-type: inline-size; }
 .sheet { min-width: 0; border: 2px solid var(--color-band); border-radius: var(--radius); background: var(--color-surface); overflow: clip; }
 .sheet-head {
