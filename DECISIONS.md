@@ -2,6 +2,25 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-03: eval result. The fine-tune does not beat a well-prompted model on accuracy
+
+`scripts/eval.py`, `runs/eval.json`. Exact-match on the full parse (or null). Frozen real set (Amina, 18), supplied synthetic set (43), fresh generated set (300, seed 99, no overlap with training).
+
+| System | real 18 | supplied 43 | fresh 300 |
+|---|---|---|---|
+| Rules baseline (fitted to the real 18) | 18 | 43 | 248 |
+| Derica LoRA (Qwen3.5-4B, 3 epochs, 1,500 synthetic examples) | 17 | 42 | 300 |
+| gpt-oss-120b, rules and 10 examples in the prompt | 18 | 43 | 300 |
+| Gemini 2.5 Flash-Lite, rules and 10 examples in the prompt | 18 | 43 | 299 |
+| Qwen3.5-4B base, rules and 10 examples, raw prompt | 1 | 1 | 28 |
+
+- First run was unfair: the comparison models were not told Amina's conventions and lost on that. I gave them a full prompt and reran. Two of my first few-shot examples were copies of test messages. I replaced them and added a test (`test_no_few_shot_example_is_a_frozen_test_message`).
+- Result: with the conventions in the prompt, gpt-oss-120b and Gemini Flash-Lite match or beat the fine-tune. The 300/300 on the fresh set is the same generator that made the training data, so it shows the model learned the generator's styles, not that it generalises.
+- Qwen3.5-4B base scores 1/18 because it often starts with `<think>` or a bare number under a raw prompt. That is a harness limit for a thinking model, not a capability measure, and I did not tune it further.
+- The fine-tune's one real miss: `Rice na 78k for the 50kg bag` came back as unit `bag`. The training generator never wrote "for the 50kg bag". I did not add that phrasing to training, because that would be tuning to a test message.
+- What the fine-tune still has: a ~264-character prompt against ~1544 characters, and a small model whose weights are ours. Median latency is network-bound and about equal (2.2 s vs 0.8-2.1 s), so no latency claim.
+- Sample size caveat: 18 real messages. One miss is 5.6 points.
+
 ## 2026-10-03: WFP markup dropped as evidence
 
 Re-ran the WFP Nigeria retail-over-wholesale markup with unit cleaning to naira per kg and a planted control (`derica/wfp.py`, `scripts/wfp_report.py`; the control recovers a planted 10% markup exactly). The real numbers are not usable. Rice (local) shows negative markups for 2018-2023 (-0.8% to -17.9%), gari 33-64%, groundnuts 5-12%. Retail and wholesale rows are different product forms or markets, so the ratio does not mean a seller's markup. The earlier 5-9% figure came from a method without unit cleaning and is retracted.
