@@ -20,3 +20,8 @@ Every claim made in the README or the post maps to a command that reproduces it.
 | The page has no horizontal clipping from 320 to 1920 px, and the probe detects a planted wide element | VERIFIED once, by a headless Chrome drive on 2026-10-04; the driver is not in the repo | not reproducible from the repo yet |
 | Live URL works from a phone | UNVERIFIED, not deployed | `render.yaml` is ready; deploy needs the owner's Render account and `TINKER_API_KEY` |
 | The model never sets a price | VERIFIED by construction | `derica/repricer.py` imports no model code |
+| The v2 adapter is 145,889,280 bytes with SHA256 c3e8b7ca…b6f102 and holds a PEFT adapter for Qwen3.5-4B, rank 16 | VERIFIED | `uv run python scripts/export_adapter.py` then read `runs/adapter.json` |
+| The first training run cost $0.3363 (456,282 tokens) on Tinker's billing | VERIFIED | `uv run python scripts/billing_report.py` then read `runs/billing.json` |
+| The second training run's billed cost | UNVERIFIED, not in Tinker's usage feed yet (about $0.78 if scaled by rows; an estimate) | rerun `scripts/billing_report.py` later |
+| One /parse call costs about $0.00004 (75.5 prompt tokens, 16.3 reply tokens), about 24,000 per dollar | VERIFIED at Tinker's billed rates | `PYTHONPATH=. uv run python scripts/cost_per_call.py` |
+
