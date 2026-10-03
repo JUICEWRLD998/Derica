@@ -1,0 +1,1089 @@
+{
+ "rules baseline": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 18,
+   "invalid": 0,
+   "p50_s": null,
+   "misses": []
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 43,
+   "invalid": 0,
+   "p50_s": null,
+   "misses": []
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 248,
+   "invalid": 0,
+   "p50_s": null,
+   "misses": [
+    {
+     "id": null,
+     "text": "Groundnut was 210,500 last week, 100kg now 212,500",
+     "want": {
+      "item": "groundnut",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 212500
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Groundnut was 105000 last week, 50kg now 106,000",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 106000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "rice mudu na 3150",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3150
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Beans was 3,400 mudu, now 3,600",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3600
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "RICE paint na 13700",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 13700
+     },
+     "got": "{\"item\": \"rice\", \"qty\": 50, \"unit\": \"kg\", \"price_ngn\": 13700}"
+    },
+    {
+     "id": null,
+     "text": "Rice derica na ₦1,450",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1450
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "rice was 74k last week, 50kg now 77k",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 77000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "GARRI was 54k last week, 50kg now 55k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 55000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "garri was 1,550 mudu, now 1,850",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 1850
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "BEANS was 1,600 derica, now 1700",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1700
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Garri was 48.5k last week, 50kg now ₦50.5k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 50500
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Groundnut was 1,800 derica, now 1,950",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "derica",
+      "price_ngn": 1950
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Groundnut paint na 18050",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 18050
+     },
+     "got": "{\"item\": \"groundnut\", \"qty\": 50, \"unit\": \"kg\", \"price_ngn\": 18050}"
+    },
+    {
+     "id": null,
+     "text": "Beans was 197000 last week, 100kg now 198k",
+     "want": {
+      "item": "beans",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 198000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Garri mudu na 2,100",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 2100
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Rice paint na 12700",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 12700
+     },
+     "got": "{\"item\": \"rice\", \"qty\": 50, \"unit\": \"kg\", \"price_ngn\": 12700}"
+    },
+    {
+     "id": null,
+     "text": "BEANS paint na 15,600",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 15600
+     },
+     "got": "{\"item\": \"beans\", \"qty\": 50, \"unit\": \"kg\", \"price_ngn\": 15600}"
+    },
+    {
+     "id": null,
+     "text": "groundnut was 3800 mudu, now 3950",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3950
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Beans was 43500 last week, 25kg now 44500",
+     "want": {
+      "item": "beans",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 44500
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Garri was 26500 last week, 25kg now 27500",
+     "want": {
+      "item": "garri",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 27500
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Garri was ₦56k last week, 50kg now 59000",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 59000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "GROUNDNUT was 100k last week, 50kg now 102k",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 102000
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Beans was 14400 paint, now ₦14,600",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 14600
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "Groundnut mudu na 3750",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3750
+     },
+     "got": "null"
+    },
+    {
+     "id": null,
+     "text": "rice mudu na 3100",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3100
+     },
+     "got": "null"
+    }
+   ]
+  }
+ },
+ "Qwen3.5-4B + rules and examples in prompt": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 1,
+   "invalid": 17,
+   "p50_s": 2.16,
+   "misses": [
+    {
+     "id": 1,
+     "text": "Rice 50kg now 78k",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 78000
+     },
+     "got": "50kg 78k\n\n"
+    },
+    {
+     "id": 2,
+     "text": "Beans 50kg 92k for today",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 92000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": 3,
+     "text": "Garri 50kg is 55k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 55000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 4,
+     "text": "Groundnut 50kg 105k",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 105000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": 5,
+     "text": "Rice supplier said price don change o",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": 6,
+     "text": "How many bags you want?",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": 7,
+     "text": "Abeg check the rice price for me before you come",
+     "want": null,
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 8,
+     "text": "Beans no dey cheap again, 92k now",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 92000
+     },
+     "got": "92k is a 50kg bag, so unit is kg and qty is 50.\n\n"
+    },
+    {
+     "id": 9,
+     "text": "I fit give you 2,900 mudu",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 2900
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 10,
+     "text": "Garri na 2,000 mudu today",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 2000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": 11,
+     "text": "Groundnut 3,800 mudu",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3800
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": 12,
+     "text": "If you take 5 bags I fit reduce am small",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": 13,
+     "text": "Bring your money make I reserve the bags",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": 14,
+     "text": "Rice na 78k for the 50kg bag",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 78000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 15,
+     "text": "Beans supplier just increase am this morning",
+     "want": null,
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 16,
+     "text": "Garri 55k per bag, no delivery inside",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 55000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": 18,
+     "text": "If na 10 mudu I go give you better price",
+     "want": null,
+     "got": "<think>\n\n"
+    }
+   ]
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 1,
+   "invalid": 42,
+   "p50_s": 2.23,
+   "misses": [
+    {
+     "id": "t1-01",
+     "text": "Rice 50kg 76k today",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 76000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-02",
+     "text": "Beans 50kg 90k",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 90000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-03",
+     "text": "Garri 50kg 53k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 53000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-04",
+     "text": "Groundnut 50kg 102k",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 102000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-05",
+     "text": "Rice price don go up again",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-06",
+     "text": "If you take 5 bags I fit reduce small",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-07",
+     "text": "Beans na 3,300 mudu",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3300
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-08",
+     "text": "Garri 1,900 mudu",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 1900
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-09",
+     "text": "Groundnut 3,700 mudu",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3700
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-10",
+     "text": "Bring money make I keep am for you",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-11",
+     "text": "Rice supplier say 76k final",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 76000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-12",
+     "text": "How many mudu you want?",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-13",
+     "text": "Beans no dey available plenty",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-14",
+     "text": "Garri na 53k per bag",
+     "want": {
+      "item": "garri",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 53000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t1-15",
+     "text": "Groundnut 102k for 50kg",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 102000
+     },
+     "got": "102000\n\n"
+    },
+    {
+     "id": "t2-01",
+     "text": "Rice 50kg now 79,500",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 79500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": "t2-02",
+     "text": "Beans 95k per bag",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 95000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-03",
+     "text": "Garri 57k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 57000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-04",
+     "text": "Groundnut 108k",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 108000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-05",
+     "text": "Rice na 3k mudu",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-06",
+     "text": "Beans 3,500 mudu",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3500
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-08",
+     "text": "Groundnut 4k mudu",
+     "want": {
+      "item": "groundnut",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 4000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-10",
+     "text": "If na full bag I fit do better price",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-11",
+     "text": "You want white beans or brown?",
+     "want": null,
+     "got": "<think>\n"
+    },
+    {
+     "id": "t2-12",
+     "text": "Rice no cheap again o",
+     "want": null,
+     "got": "<think>\n"
+    }
+   ]
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 28,
+   "invalid": 272,
+   "p50_s": 2.17,
+   "misses": [
+    {
+     "id": null,
+     "text": "Beans 88500 per bag",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 88500
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Groundnut was 210,500 last week, 100kg now 212,500",
+     "want": {
+      "item": "groundnut",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 212500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Supplier say Rice 76k final",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 76000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Beans na 99,500 per bag today",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 99500
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Garri 50 kg don reach 52k",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 52000
+     },
+     "got": "52000\n\n"
+    },
+    {
+     "id": null,
+     "text": "Groundnut 109,500 now",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 109500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "beans 50kg now 95000",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 95000
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Na 14k paint I fit do",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "paint",
+      "price_ngn": 14000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "196k for 100kg beans",
+     "want": {
+      "item": "beans",
+      "qty": 100,
+      "unit": "kg",
+      "price_ngn": 196000
+     },
+     "got": "196000\n\n"
+    },
+    {
+     "id": null,
+     "text": "Supplier say Groundnut ₦105.5k final",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 105500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "groundnut don reach 100,500 o",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 100500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "groundnut no dey cheap again, 111500 now",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 111500
+     },
+     "got": "111500\n\n"
+    },
+    {
+     "id": null,
+     "text": "Groundnut na 53k for 25kg",
+     "want": {
+      "item": "groundnut",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 53000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Groundnut was 105000 last week, 50kg now 106,000",
+     "want": {
+      "item": "groundnut",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 106000
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "GROUNDNUT 25kg now 50,500",
+     "want": {
+      "item": "groundnut",
+      "qty": 25,
+      "unit": "kg",
+      "price_ngn": 50500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Beans ₦3,550 mudu today",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3550
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Beans 96500 per bag, no delivery",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "bag",
+      "price_ngn": 96500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "51.5k for 50kg garri",
+     "want": {
+      "item": "garri",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 51500
+     },
+     "got": "51500\n\n"
+    },
+    {
+     "id": null,
+     "text": "rice mudu na 3150",
+     "want": {
+      "item": "rice",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3150
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Beans was 3,400 mudu, now 3,600",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3600
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Beans ₦3400 mudu today",
+     "want": {
+      "item": "beans",
+      "qty": 1,
+      "unit": "mudu",
+      "price_ngn": 3400
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Beans 50kg now 92.5k",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 92500
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Rice don reach 72.5k o",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 72500
+     },
+     "got": "<think>\n"
+    },
+    {
+     "id": null,
+     "text": "Beans na 87,500 for 50kg",
+     "want": {
+      "item": "beans",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 87500
+     },
+     "got": "<think>\n\n"
+    },
+    {
+     "id": null,
+     "text": "Just checked, Rice 50kg dey 81,500",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 81500
+     },
+     "got": "<think>\n\n"
+    }
+   ]
+  }
+ },
+ "Derica LoRA (Qwen3.5-4B)": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 17,
+   "invalid": 0,
+   "p50_s": 2.84,
+   "misses": [
+    {
+     "id": 14,
+     "text": "Rice na 78k for the 50kg bag",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 78000
+     },
+     "got": "{\"item\":\"rice\",\"qty\":50,\"unit\":\"bag\",\"price_ngn\":78000}\n"
+    }
+   ]
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 42,
+   "invalid": 0,
+   "p50_s": 2.2,
+   "misses": [
+    {
+     "id": "t2-09",
+     "text": "Supplier just send new price",
+     "want": null,
+     "got": "{\"item\":\"garri\",\"qty\":50,\"unit\":\"kg\",\"price_ngn\":55000}\n"
+    }
+   ]
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 300,
+   "invalid": 0,
+   "p50_s": 2.19,
+   "misses": []
+  }
+ },
+ "gpt-oss-120b + rules and examples": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 18,
+   "invalid": 0,
+   "p50_s": 2.13,
+   "misses": []
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 43,
+   "invalid": 0,
+   "p50_s": 1.34,
+   "misses": []
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 300,
+   "invalid": 0,
+   "p50_s": 1.55,
+   "misses": []
+  }
+ },
+ "Gemini 2.5 Flash-Lite + rules and examples": {
+  "real (Amina, 18)": {
+   "n": 18,
+   "correct": 18,
+   "invalid": 0,
+   "p50_s": 0.8,
+   "misses": []
+  },
+  "supplied synthetic (43)": {
+   "n": 43,
+   "correct": 43,
+   "invalid": 0,
+   "p50_s": 0.81,
+   "misses": []
+  },
+  "fresh generated (300)": {
+   "n": 300,
+   "correct": 299,
+   "invalid": 0,
+   "p50_s": 0.86,
+   "misses": [
+    {
+     "id": null,
+     "text": "Supplier say Rice 72000 final",
+     "want": {
+      "item": "rice",
+      "qty": 50,
+      "unit": "kg",
+      "price_ngn": 72000
+     },
+     "got": "{\"item\":\"rice\",\"qty\":1,\"unit\":\"bag\",\"price_ngn\":72000}"
+    }
+   ]
+  }
+ }
+}
