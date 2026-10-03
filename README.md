@@ -1,0 +1,20 @@
+# Derica
+
+Work in progress for the DEV Hacktoberfest Weekend Challenge, "Build for a Friend".
+
+A friend of mine sells grains and flour in a Nigerian market. She buys by the bag and sells by the derica, mudu and paint. When the bag price moves, her per-measure price usually moves later than it should.
+
+Derica reads a price message the way she types it, checks it against her own measures, and works out the new price per measure with plain code. A small open model proposes the parse. It never sets a price.
+
+Status vocabulary used in this repo: LIVE / NEXT / NOT LIVE.
+
+| Piece | Status |
+|---|---|
+| Money parsing, units table, repricer | NEXT |
+| Rules-based parser | NEXT |
+| Tinker fine-tune and eval | NOT LIVE |
+| Web page and price card | NOT LIVE |
+
+The full README (thesis, evidence, how to verify) is written before submission.
+
+Started during the challenge window (2026-10-02 02:00 UTC to 2026-10-05 06:59 UTC).

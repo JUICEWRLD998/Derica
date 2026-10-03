@@ -1,0 +1,13 @@
+[project]
+name = "derica"
+version = "0.1.0"
+description = "Reads market price messages in naira and local measures, then reprices per measure with deterministic code."
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
