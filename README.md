@@ -10,8 +10,9 @@ Status vocabulary used in this repo: LIVE / NEXT / NOT LIVE.
 
 | Piece | Status |
 |---|---|
-| Money parsing, units table, repricer | NEXT |
-| Rules-based parser | NEXT |
+| Money parsing, units table, schema, repricer (tested, 75 tests) | LIVE as a library |
+| Strict rules parser (tidy format only) | LIVE as a library |
+| Rules baseline for messy WhatsApp messages | NEXT |
 | Tinker fine-tune and eval | NOT LIVE |
 | Web page and price card | NOT LIVE |
 
