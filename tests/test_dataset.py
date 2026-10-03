@@ -58,3 +58,11 @@ def test_no_few_shot_example_is_a_frozen_test_message():
     }
     for message, _topic, _answer in _SHOTS:
         assert " ".join(message.lower().split()) not in texts
+
+
+def test_common_spelling_variants_normalise_to_the_four_items():
+    from derica.units import normalize_item
+
+    assert [normalize_item(w) for w in ("gari", "Garri", "bean", "Beans", "groundnuts")] == [
+        "garri", "garri", "beans", "beans", "groundnut"
+    ]

@@ -12,7 +12,7 @@ Units = dict[str, dict[str, int]]
 # Only these units need no calibration, because a kilogram is a kilogram.
 _ABSOLUTE_GRAMS = {"kg": 1000}
 
-_ALIASES = {"groundnuts": "groundnut", "ground nut": "groundnut", "ground nuts": "groundnut"}
+_ALIASES = {"gari": "garri", "bean": "beans", "groundnuts": "groundnut", "ground nut": "groundnut", "ground nuts": "groundnut"}
 
 
 class UnknownMeasure(ValueError):
