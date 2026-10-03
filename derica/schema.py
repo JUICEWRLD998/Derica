@@ -9,7 +9,10 @@ from dataclasses import dataclass
 from derica.units import normalize_item
 
 UNITS = ("kg", "derica", "mudu", "paint", "bag")
-SIDES = ("buy", "sell")
+
+# Role comes from the unit, not from a field the message rarely states:
+# a kg or bag price is a cost, a derica, mudu or paint price is a selling price.
+COST_UNITS = ("kg", "bag")
 
 
 @dataclass(frozen=True)
@@ -18,7 +21,10 @@ class PriceEvent:
     qty: float
     unit: str
     price_ngn: int
-    side: str
+
+    @property
+    def is_cost(self) -> bool:
+        return self.unit in COST_UNITS
 
     def __post_init__(self) -> None:
         if not isinstance(self.item, str) or not self.item.strip():
@@ -30,8 +36,6 @@ class PriceEvent:
             raise ValueError(f"unit must be one of {UNITS}")
         if isinstance(self.price_ngn, bool) or not isinstance(self.price_ngn, int) or self.price_ngn <= 0:
             raise ValueError("price_ngn must be a positive whole number")
-        if self.side not in SIDES:
-            raise ValueError(f"side must be one of {SIDES}")
 
     @classmethod
     def from_json(cls, text: str) -> "PriceEvent":

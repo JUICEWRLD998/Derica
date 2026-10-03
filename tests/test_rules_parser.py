@@ -21,11 +21,11 @@ def test_parses_all_fifteen_real_messages_from_the_friend():
     assert len(lines) == 15
     events = [parse_line(line) for line in lines]
     assert [(e.item, e.price_ngn) for e in events] == EXPECTED
-    assert all(e.unit == "mudu" and e.qty == 1 and e.side == "sell" for e in events)
+    assert all(e.unit == "mudu" and e.qty == 1 for e in events)
 
 
 def test_numbering_and_dash_style_do_not_matter():
-    expected = PriceEvent(item="rice", qty=1, unit="mudu", price_ngn=2500, side="sell")
+    expected = PriceEvent(item="rice", qty=1, unit="mudu", price_ngn=2500)
     assert parse_line("Rice — ₦2,500 mudu") == expected
     assert parse_line("3) rice - N2500 mudu") == expected
     assert parse_line("RICE – 2.5k Mudu") == expected
