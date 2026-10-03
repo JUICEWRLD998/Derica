@@ -20,7 +20,16 @@ def test_all_eighteen_messages_are_present_in_order():
 def test_every_message_has_exactly_one_known_kind():
     kinds = Counter(r["kind"] for r in load())
     assert set(kinds) <= {"event", "incomplete", "not_price"}
-    assert kinds == {"event": 9, "incomplete": 2, "not_price": 7}
+    assert kinds == {"event": 11, "not_price": 7}
+
+
+def test_an_item_missing_from_the_message_comes_from_the_conversation_context():
+    # Amina leaves the item out when both people already know it ("2,900 mudu").
+    for row in load():
+        if row["kind"] == "event" and row["gold"]["item"] not in row["text"].lower():
+            assert row.get("context_item") == row["gold"]["item"], row["id"]
+        else:
+            assert "context_item" not in row, row["id"]
 
 
 def test_event_labels_build_valid_price_events():
