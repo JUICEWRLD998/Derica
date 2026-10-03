@@ -12,7 +12,7 @@ Status vocabulary used in this repo: LIVE / NEXT / NOT LIVE.
 |---|---|
 | Money parsing, units table, schema, repricer (tested, 75 tests) | LIVE as a library |
 | Strict rules parser (tidy format only) | LIVE as a library |
-| Rules baseline for messy WhatsApp messages | NEXT |
+| Rules baseline for messy WhatsApp messages (fitted to the first 18, not yet scored on unseen messages) | LIVE as a library |
 | Tinker fine-tune and eval | NOT LIVE |
 | Web page and price card | NOT LIVE |
 
