@@ -2,6 +2,14 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-03: Tinker and OpenRouter access verified
+
+Ran `scripts/access_spike.py` with the real keys. Both calls worked.
+- Tinker: `tinker.ServiceClient()` reads `TINKER_API_KEY` from the environment (confirmed in the SDK docs and by the live call). `get_server_capabilities()` returned 31 models, including `Qwen/Qwen3.5-4B`, `Qwen/Qwen3.5-9B` and `openai/gpt-oss-120b`.
+- OpenRouter: key accepted. Exact IDs for the comparison rows: `openai/gpt-oss-120b`, `google/gemini-2.5-flash-lite`, `google/gemini-2.5-flash`. A one-word chat call to `google/gemini-2.5-flash-lite` returned `ok`.
+- Nothing was trained yet, so no training cost is recorded.
+- Where: `scripts/access_spike.py`.
+
 ## 2026-10-03: conversation context is part of the input
 
 Amina (the friend, first name used with permission) says most WhatsApp price messages leave the item out when both people already know it, and a bare bag-sized price such as `92k` means a 50kg bag. So `I fit give you 2,900 mudu` is rice because rice was the topic, and with no topic she asks first.
