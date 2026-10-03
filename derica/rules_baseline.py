@@ -35,7 +35,10 @@ def parse_message(text: str, context_item: str | None = None) -> PriceEvent | No
     prices, counts = [], []
     for match in _NUMBER.finditer(text):
         number, k, unit = match.group("number", "k", "unit")
-        naira = parse_naira(number + (k or ""))
+        try:
+            naira = parse_naira(number + (k or ""))
+        except ValueError:
+            return None
         if k or naira >= _SMALLEST_PRICE:
             prices.append((naira, unit))
         else:

@@ -88,3 +88,22 @@ Whether a bag price is "buy" or "sell" is rarely stated and Amina says she uses 
 All cost and markup arithmetic uses `Fraction`. The only rounding is the one the seller sees, up to her naira step (default 50), so rounding never lowers her margin.
 - Rejected: floats, which can land a price one step low.
 - Where: `derica/repricer.py`, `tests/test_repricer.py`.
+
+## 2026-10-03: hard set of 39 hand-written messages (synthetic, frozen before scoring)
+
+The 18 real messages are too few, and the fine-tune's 300/300 comes from the generator that made its training data. I wrote 39 harder messages by hand: number words ("seventy eight thousand"), `N` and `₦` prefixes, a `#` naira sign, typos in the item name (`Bean`, `Gari`), a delivery fee beside the price, a unit buried in the sentence, and two out-of-scope items (`groundnut oil`, `Yam`). They are synthetic: I wrote them, Amina did not. Gold follows her stated conventions. The file was hashed and frozen before any system ran on it (`data/frozen/hard_test.jsonl`, `scripts/build_hard_set.py`).
+
+Result, exact match out of 39:
+
+| System | Score |
+|---|---|
+| Rules baseline | 28 |
+| Derica LoRA (Qwen3.5-4B) | 35 |
+| Gemini 2.5 Flash-Lite, rules and examples in the prompt | 36 |
+| gpt-oss-120b, rules and examples in the prompt | 37 |
+| Qwen3.5-4B, same prompt, no fine-tune | 3 (36 invalid replies, it starts with `<think>`) |
+
+- The fine-tune beats the rules by 7 messages and trails the 120B model by 2. It does not beat the prompted large models. This keeps the earlier finding.
+- The LoRA's four misses: `Rice 25 kg bag now 41k` came back as unit `bag` (the same slip as the one real miss), `groundnut oil` and `Yam` were read as grain at 50 kg (it was never trained to refuse an item outside the four), and the 3k delivery fee was added to the price (81,000).
+- Two things were fixed after seeing the scores, and both are product fixes, not tuning on the answer: (1) the rules baseline crashed on `N82,000` with a `ValueError`; it now returns `None`. (2) `normalize_item` did not map `gari` to `garri` or `bean` to `beans`, so a correct model reply was scored wrong; it does now. The second fix moved gpt-oss from 36 to 37 and Gemini from 35 to 36. The LoRA and rules scores did not change.
+- Not done: the training data was not changed to cover these messages. Doing that and re-scoring on the same set would measure memory, not skill.

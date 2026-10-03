@@ -36,9 +36,10 @@ def read(path):
 
 real = read(DATA / "frozen" / "real_test.jsonl")
 supplied = read(DATA / "frozen" / "supplied_test.jsonl")
-exclude = {r["text"] for r in real + supplied + read(DATA / "synthetic" / "train.jsonl")}
+hard = read(DATA / "frozen" / "hard_test.jsonl")
+exclude = {r["text"] for r in real + supplied + hard + read(DATA / "synthetic" / "train.jsonl")}
 fresh = generate(300, seed=99, exclude=exclude)
-SETS = {"real (Amina, 18)": real, "supplied synthetic (43)": supplied, "fresh generated (300)": fresh}
+SETS = {"real (Amina, 18)": real, "supplied synthetic (43)": supplied, "fresh generated (300)": fresh, "hard hand-written (39)": hard}
 
 service = tinker.ServiceClient()
 zero_shot = service.create_sampling_client(base_model=BASE)

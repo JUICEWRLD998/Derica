@@ -2,6 +2,8 @@
   "note": "Frozen 2026-10-03 after the rules baseline was written. Do not edit.",
   "files": {
     "real_test.jsonl": "23dd225e177f02c340afb8c8c322b40b21f4ec8c677c58605988e873ff1ba533",
-    "supplied_test.jsonl": "e464deccc2b528bec40f89de185b07373e30076690f7ca6177c391b124d1932a"
-  }
+    "supplied_test.jsonl": "e464deccc2b528bec40f89de185b07373e30076690f7ca6177c391b124d1932a",
+    "hard_test.jsonl": "5f512387f047d9305f56ec06e0a50c28afe67efb6c6bb17648bd7d8242ff3a55"
+  },
+  "hard_note": "hard_test.jsonl frozen 2026-10-03 before any system was run on it. Synthetic, hand-written."
 }
