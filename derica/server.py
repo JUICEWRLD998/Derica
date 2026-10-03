@@ -7,6 +7,8 @@ shown, and plain code sets every price. Run: uv run uvicorn derica.server:app
 import time
 from collections import defaultdict, deque
 from pathlib import Path
+import threading
+from contextlib import asynccontextmanager
 from threading import Lock
 
 from fastapi import FastAPI, HTTPException, Request
@@ -80,14 +82,29 @@ class CardIn(BaseModel):
     items: list[CardItem]
 
 
+def _quietly(model, text: str) -> None:
+    try:
+        model(text, None)
+    except Exception:
+        pass  # warm-up only; a real request reports its own failure
+
+
 def _event(raw: EventIn) -> PriceEvent:
     return PriceEvent(raw.item, int(raw.qty) if float(raw.qty).is_integer() else raw.qty, raw.unit, raw.price_ngn)
 
 
-def create_app(model=_UNSET, limiter: RateLimiter | None = None) -> FastAPI:
+def create_app(model=_UNSET, limiter: RateLimiter | None = None, warm: bool = False) -> FastAPI:
     reader_model = TinkerModel.from_env() if model is _UNSET else model
     limit = limiter or RateLimiter(30, 60)
-    app = FastAPI(title="Derica", docs_url=None, redoc_url=None)
+
+    @asynccontextmanager
+    async def lifespan(_app):
+        # The first sampler call builds the client and tokenizer (about 19 s measured). Do it before a visitor arrives.
+        if warm and reader_model is not None:
+            threading.Thread(target=_quietly, args=(reader_model, "Rice 50kg 80k"), daemon=True).start()
+        yield
+
+    app = FastAPI(title="Derica", docs_url=None, redoc_url=None, lifespan=lifespan)
 
     def guard(request: Request) -> None:
         forwarded = request.headers.get("x-forwarded-for", "")
@@ -133,4 +150,4 @@ def create_app(model=_UNSET, limiter: RateLimiter | None = None) -> FastAPI:
     return app
 
 
-app = create_app()
+app = create_app(warm=True)

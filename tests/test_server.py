@@ -81,3 +81,11 @@ def test_card_endpoint_rejects_an_empty_board():
 def test_the_home_page_is_served():
     r = client().get("/")
     assert r.status_code == 200 and "text/html" in r.headers["content-type"]
+
+
+def test_the_model_is_warmed_once_at_startup_so_the_first_visitor_is_not_slow():
+    import threading
+
+    called = threading.Event()
+    with TestClient(create_app(model=lambda t, c: called.set() or "null", limiter=RateLimiter(5, 60), warm=True)):
+        assert called.wait(timeout=3)
