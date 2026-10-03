@@ -11,7 +11,8 @@ def test_page_css_uses_tokens_only_for_colour_and_font():
     # Hallmark "locked tokens": no raw colour literal and no font-family outside tokens.css.
     body = re.sub(r"@font-face\s*\{.*?\}", "", CSS, flags=re.S)
     assert not re.search(r"#[0-9a-fA-F]{3,8}\b|rgba?\(|hsla?\(|oklch\(", body)
-    assert not re.search(r"font-family:\s*(?!var\()", body)
+    declared = re.findall(r"font-family:\s*([^;]+);", body)
+    assert declared and all(value.startswith("var(--font-") for value in declared)
 
 
 def test_no_transition_all_and_no_italic_headings():
