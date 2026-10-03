@@ -1,0 +1,18 @@
+{"id": 1, "text": "Rice 50kg now 78k", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 78000}, "note": ""}
+{"id": 2, "text": "Beans 50kg 92k for today", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 92000}, "note": ""}
+{"id": 3, "text": "Garri 50kg is 55k", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 55000}, "note": ""}
+{"id": 4, "text": "Groundnut 50kg 105k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 105000}, "note": ""}
+{"id": 5, "text": "Rice supplier said price don change o", "kind": "not_price", "gold": null, "note": "says the price changed but gives no number"}
+{"id": 6, "text": "How many bags you want?", "kind": "not_price", "gold": null, "note": ""}
+{"id": 7, "text": "Abeg check the rice price for me before you come", "kind": "not_price", "gold": null, "note": "names rice but gives no price"}
+{"id": 8, "text": "Beans no dey cheap again, 92k now", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 92000}, "note": "unit omitted; Amina: a bare bag-sized price means a 50kg bag"}
+{"id": 9, "text": "I fit give you 2,900 mudu", "kind": "event", "context_item": "rice", "gold": {"item": "rice", "qty": 1, "unit": "mudu", "price_ngn": 2900}, "note": "item omitted; Amina: it was rice because rice was the topic. With no topic she asks first"}
+{"id": 10, "text": "Garri na 2,000 mudu today", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "mudu", "price_ngn": 2000}, "note": ""}
+{"id": 11, "text": "Groundnut 3,800 mudu", "kind": "event", "gold": {"item": "groundnut", "qty": 1, "unit": "mudu", "price_ngn": 3800}, "note": ""}
+{"id": 12, "text": "If you take 5 bags I fit reduce am small", "kind": "not_price", "gold": null, "note": "quantity discount, no number"}
+{"id": 13, "text": "Bring your money make I reserve the bags", "kind": "not_price", "gold": null, "note": ""}
+{"id": 14, "text": "Rice na 78k for the 50kg bag", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 78000}, "note": ""}
+{"id": 15, "text": "Beans supplier just increase am this morning", "kind": "not_price", "gold": null, "note": "says the price rose but gives no number"}
+{"id": 16, "text": "Garri 55k per bag, no delivery inside", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "bag", "price_ngn": 55000}, "note": "bag size comes from the units table (50kg)"}
+{"id": 17, "text": "Groundnut na 105k for 50kg", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 105000}, "note": ""}
+{"id": 18, "text": "If na 10 mudu I go give you better price", "kind": "not_price", "gold": null, "note": "a quantity, no price"}

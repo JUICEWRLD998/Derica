@@ -1,0 +1,7 @@
+{
+  "note": "Frozen 2026-10-03 after the rules baseline was written. Do not edit.",
+  "files": {
+    "real_test.jsonl": "23dd225e177f02c340afb8c8c322b40b21f4ec8c677c58605988e873ff1ba533",
+    "supplied_test.jsonl": "e464deccc2b528bec40f89de185b07373e30076690f7ca6177c391b124d1932a"
+  }
+}
