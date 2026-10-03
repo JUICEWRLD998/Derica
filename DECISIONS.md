@@ -2,6 +2,14 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-03: synthetic training data, generated and labelled as such
+
+`derica/synth.py` generates WhatsApp-style price messages for training (seeded, deduplicated, `source: synthetic_generated`). `data/synthetic/train.jsonl` holds 1,500 of them (seed 2026). It excludes every text in the real set and the supplied trader set, and `tests/test_synth.py` checks that.
+- I did not write messages in Amina's voice and call them hers. The test set stays real (her 18 plus anything she collects) and the post will say how small it is.
+- The generator includes shapes her chats did not show: an old and a new price in one message, `Rice 71k per bag`, `{item} {unit} na {price}`, the item left out. The rules baseline reads 81.7% of the 1,500. That gap is a property of shapes I chose to add, so it is not evidence that a model beats rules on her real chats.
+- Rejected: generating "test" messages tuned so the model wins.
+- Where: `derica/synth.py`, `data/synthetic/train.jsonl`, `tests/test_synth.py`.
+
 ## 2026-10-03: the three "trader" message sets are synthetic, and the baseline reads all of them
 
 Three sets of 15 messages arrived labelled "Trader 1/2/3", with a note that they are synthetic examples with fictional prices created for testing. They are stored in `data/synthetic/trader_messages.jsonl` with `source: synthetic_supplied_for_testing`, apart from `data/real/`. They are not real traders and must never be described as such in the post.
