@@ -6,6 +6,7 @@ Run: uv run python scripts/train_tinker.py
 """
 
 import json
+import sys
 import random
 import time
 from pathlib import Path
@@ -20,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_MODEL = "Qwen/Qwen3.5-4B"
 RANK, EPOCHS, BATCH, LR = 16, 3, 32, 2e-4
 
-rows = [json.loads(line) for line in (ROOT / "data" / "tinker" / "train.jsonl").read_text(encoding="utf-8").splitlines()]
+rows = [json.loads(line) for line in (ROOT / "data" / "tinker" / (sys.argv[1] if len(sys.argv) > 1 else "train.jsonl")).read_text(encoding="utf-8").splitlines()]
 service = tinker.ServiceClient()
 client = service.create_lora_training_client(base_model=BASE_MODEL, rank=RANK)
 tokenizer = client.get_tokenizer()
@@ -62,8 +63,8 @@ for epoch in range(EPOCHS):
         if step % 10 == 0 or step == 1:
             print(f"epoch {epoch} step {step} loss/token {loss:.4f} ({time.time() - started:.0f}s)", flush=True)
 
-sampler = client.save_weights_for_sampler(name="derica-v1").result()
-(ROOT / "runs" / "train_run.json").write_text(
+sampler = client.save_weights_for_sampler(name=sys.argv[2] if len(sys.argv) > 2 else "derica-v1").result()
+(ROOT / "runs" / (sys.argv[3] if len(sys.argv) > 3 else "train_run.json")).write_text(
     json.dumps({"base_model": BASE_MODEL, "rank": RANK, "epochs": EPOCHS, "batch": BATCH, "lr": LR, "examples": len(rows),
                 "steps": step, "seconds": round(time.time() - started), "sampler_path": sampler.path, "loss": losses}, indent=1),
     encoding="utf-8",
