@@ -2,6 +2,19 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-03: the messy-message rules baseline reads 18 of 18, and that proves little
+
+`derica/rules_baseline.py` takes a message plus an optional `context_item` and returns a `PriceEvent` or `None`. It reads all 18 of Amina's messages correctly (11 prices, 7 non-prices). I wrote it after reading those same 18 messages, so the score is fitted to them and says nothing about messages it has not seen.
+- Consequence: the eval cannot use these 18 as the test set. The frozen test set must be messages collected after this baseline was written (other traders via Amina), and the baseline must not be edited after that set is frozen.
+- Rejected: reporting 18 of 18 as a result, or tuning the baseline until a model looks better against it.
+- Where: `derica/rules_baseline.py`, `tests/test_rules_baseline.py` (the gold-set test was added after the code passed, as a pin, not as a first failing test).
+
+## 2026-10-03: Entire installed, session push off
+
+Entire CLI 0.11.3 installed (official installer, checksum verified) and enabled for Claude Code in this repo with `--local --skip-push-sessions`. Checkpoints are captured locally. Session logs are not pushed to the public repo yet, because a transcript can contain anything that appeared in a session.
+- Decision still open: when to turn session push on for the Entire category, after the keys have been rotated and the logs checked.
+- Where: `.entire/settings.local.json` (ignored).
+
 ## 2026-10-03: Tinker and OpenRouter access verified
 
 Ran `scripts/access_spike.py` with the real keys. Both calls worked.
