@@ -127,3 +127,26 @@ The first comparison was unfair to the prompted models: their prompt said nothin
 - v2 introduced new errors on `hard`: it returned null for two real prices (`abeg beans don reach 95k o, e no easy` and `Groundnut 104k oo, supplier just call me`), and read `how much be your rice?` as 15,000,000 naira. The 15,000,000 is why the app never trusts a model number without a plausibility check; see Phase 4.
 - OpenRouter models are not fully deterministic at temperature 0: gpt-oss scored 37 then 39 on `hard` across runs with the same prompt. Treat one or two messages as noise.
 - The claim the post can make: a 4B model fine-tuned for about 20 minutes matches prompted 120B and Flash-Lite models on this task to within a few messages, with a prompt a sixth the size, and clearly beats rules on messy text. The claim it cannot make: that it beats them.
+
+## 2026-10-04: Phase 4, the app, and where it departs from the plan
+
+Built `derica/server.py` (FastAPI), `derica/readers.py`, `derica/stall.py`, `derica/card.py` and a one-page UI in `derica/static/`. 167 tests pass. I ran the live Tinker sampler through the server: `abeg rice na seventy eight thousand for 50kg` came back as rice, 50 kg, ₦78,000 in about 2 seconds warm (19 seconds cold, so the server warms the sampler at startup).
+
+Departures from `implementation.md`, each on purpose:
+- **Plain HTML, CSS and JS served by FastAPI**, not a Next.js app. The plan said no framework; one Python service is also one thing to deploy. Motion is the Web Animations API, not a library.
+- **`POST /card.png`**, not `GET`. The card carries a list of prices, which does not fit a query string cleanly.
+- **The comparison view shows two readers, the Derica model and the rules**, not three. The base Qwen3.5-4B answers a raw prompt with `<think>` text, so a "base model" panel would show a failure of my harness, not of the model.
+- **A plausibility guard sits between the model and the page.** v2 once returned ₦15,000,000 for a 50 kg bag from `how much be your rice?`. Any reading outside a per-kg, per-bag or per-measure band is refused with the reason shown. The model proposes; code decides what is shown.
+- **The stall book lives in the visitor's browser** (`localStorage`). No account, no server storage. The "sample stall" button fills made-up numbers and says so.
+
+Design, from the `ui-studio` pass: the subject's own vocabulary (stencilled sack lettering, enamel tin, a bag-price tag) in place of a generic dashboard. Big Shoulders Stencil for numerals and the wordmark, Atkinson Hyperlegible for text, both OFL and bundled in `derica/static/fonts/`. The body face has no ₦ glyph, so every amount is set in the display face. Light is the default for daylight use outdoors; a dark theme follows the system setting. Contrast for 15 pairs in both themes is measured by `scripts/contrast.py` and pinned by a test, with a planted bad pair to prove the check can fail.
+
+Verification, by driving headless Chrome (not by reading the source):
+- The full journey (sample stall, paste, read, reprice, make card) ran at 320, 375, 414, 768, 1024, 1280, 1440 and 1920 px against the live model.
+- My first overflow probe read 0 everywhere while a panel was visibly cut off at 768 px, because `html` and `body` use `overflow-x: clip`. I replaced it with a probe on the panels themselves and checked it against a planted wide element. That probe also lied at first on phone widths: appending the planted element made the mobile viewport grow, so it compared against the wrong width. Both bugs are fixed and the final run is clean at all eight widths.
+- The signature moment (the new bag-price tag settles, each measure ticks from the old price to the new one, the loss appears last) was recorded as a filmstrip of the numerals: intermediate values appear over about 500 ms with motion on, and with reduced motion the final values appear in the first frame and match.
+- Hardening run in the browser: empty input, a non-price, an absurd number, a message with no item, double submit (one request), an incomplete stall book.
+- `ui-score.mjs` scored 80/100 in round 2 with its planted controls passing. Two majors remain and I did not clear them: it cannot read the macrostructure comment from a served URL, and its accent census counts the blue-black header band and dark surfaces as accents because it measures HSV saturation, so it reports 17.8% accent area where the mint-teal itself covers far less. I record both as instrument limits, not as passes.
+- The critic pass was inline and semi-blind. It found that the right half of the page was empty before the first message, so I added a labelled "Try an example" action there.
+
+Not done: deploy (needs the owner's Render account and Tinker key), a check on a real phone over mobile data, the adapter download with size and hash, training cost, and cost per call.
