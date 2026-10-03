@@ -2,6 +2,12 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-03: WFP markup dropped as evidence
+
+Re-ran the WFP Nigeria retail-over-wholesale markup with unit cleaning to naira per kg and a planted control (`derica/wfp.py`, `scripts/wfp_report.py`; the control recovers a planted 10% markup exactly). The real numbers are not usable. Rice (local) shows negative markups for 2018-2023 (-0.8% to -17.9%), gari 33-64%, groundnuts 5-12%. Retail and wholesale rows are different product forms or markets, so the ratio does not mean a seller's markup. The earlier 5-9% figure came from a method without unit cleaning and is retracted.
+- The post will not cite WFP for markup. Amina's own scale readings and prices are the only markup evidence, and they are one seller.
+- Where: `derica/wfp.py`, `tests/test_wfp.py`, `scripts/wfp_report.py`. The csv itself is gitignored.
+
 ## 2026-10-03: synthetic training data, generated and labelled as such
 
 `derica/synth.py` generates WhatsApp-style price messages for training (seeded, deduplicated, `source: synthetic_generated`). `data/synthetic/train.jsonl` holds 1,500 of them (seed 2026). It excludes every text in the real set and the supplied trader set, and `tests/test_synth.py` checks that.
