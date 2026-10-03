@@ -1,0 +1,6 @@
+{
+  "rice":      {"derica": 800, "mudu": 1600, "paint": 7000},
+  "beans":     {"derica": 750, "mudu": 1500, "paint": 6500},
+  "garri":     {"derica": 550, "mudu": 1100, "paint": 4500},
+  "groundnut": {"derica": 650, "mudu": 1300, "paint": 5500}
+}
