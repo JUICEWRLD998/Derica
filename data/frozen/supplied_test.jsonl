@@ -1,0 +1,43 @@
+{"id": "t1-01", "text": "Rice 50kg 76k today", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 76000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-02", "text": "Beans 50kg 90k", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 90000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-03", "text": "Garri 50kg 53k", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 53000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-04", "text": "Groundnut 50kg 102k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 102000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-05", "text": "Rice price don go up again", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-06", "text": "If you take 5 bags I fit reduce small", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-07", "text": "Beans na 3,300 mudu", "kind": "event", "gold": {"item": "beans", "qty": 1, "unit": "mudu", "price_ngn": 3300}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-08", "text": "Garri 1,900 mudu", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "mudu", "price_ngn": 1900}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-09", "text": "Groundnut 3,700 mudu", "kind": "event", "gold": {"item": "groundnut", "qty": 1, "unit": "mudu", "price_ngn": 3700}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-10", "text": "Bring money make I keep am for you", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-11", "text": "Rice supplier say 76k final", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 76000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-12", "text": "How many mudu you want?", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-13", "text": "Beans no dey available plenty", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-14", "text": "Garri na 53k per bag", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "bag", "price_ngn": 53000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t1-15", "text": "Groundnut 102k for 50kg", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 102000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-01", "text": "Rice 50kg now 79,500", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 79500}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-02", "text": "Beans 95k per bag", "kind": "event", "gold": {"item": "beans", "qty": 1, "unit": "bag", "price_ngn": 95000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-03", "text": "Garri 57k", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 57000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-04", "text": "Groundnut 108k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 108000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-05", "text": "Rice na 3k mudu", "kind": "event", "gold": {"item": "rice", "qty": 1, "unit": "mudu", "price_ngn": 3000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-06", "text": "Beans 3,500 mudu", "kind": "event", "gold": {"item": "beans", "qty": 1, "unit": "mudu", "price_ngn": 3500}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-08", "text": "Groundnut 4k mudu", "kind": "event", "gold": {"item": "groundnut", "qty": 1, "unit": "mudu", "price_ngn": 4000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-09", "text": "Supplier just send new price", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-10", "text": "If na full bag I fit do better price", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-11", "text": "You want white beans or brown?", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-12", "text": "Rice no cheap again o", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-13", "text": "2 bags rice available", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-14", "text": "Garri 57k 50kg", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 57000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t2-15", "text": "Groundnut price don change this week", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-01", "text": "Rice 77k for 50kg", "kind": "event", "gold": {"item": "rice", "qty": 50, "unit": "kg", "price_ngn": 77000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-02", "text": "Beans 91k", "kind": "event", "gold": {"item": "beans", "qty": 50, "unit": "kg", "price_ngn": 91000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-03", "text": "Garri 54k", "kind": "event", "gold": {"item": "garri", "qty": 50, "unit": "kg", "price_ngn": 54000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-04", "text": "Groundnut 103k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 103000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-05", "text": "I fit give you rice 2,950 mudu", "kind": "event", "gold": {"item": "rice", "qty": 1, "unit": "mudu", "price_ngn": 2950}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-06", "text": "Beans 3,400 mudu", "kind": "event", "gold": {"item": "beans", "qty": 1, "unit": "mudu", "price_ngn": 3400}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-07", "text": "Garri 2k mudu", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "mudu", "price_ngn": 2000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-09", "text": "How many bags you need?", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-10", "text": "Supplier say make we increase am", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-11", "text": "Rice don finish for the other supplier", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-12", "text": "I still get small beans", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-13", "text": "If you take 10 mudu I go reduce am", "kind": "not_price", "gold": null, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-14", "text": "Garri na 54k per bag today", "kind": "event", "gold": {"item": "garri", "qty": 1, "unit": "bag", "price_ngn": 54000}, "source": "synthetic_supplied_for_testing"}
+{"id": "t3-15", "text": "Groundnut 50kg 103k", "kind": "event", "gold": {"item": "groundnut", "qty": 50, "unit": "kg", "price_ngn": 103000}, "source": "synthetic_supplied_for_testing"}
