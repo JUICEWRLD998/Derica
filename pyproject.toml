@@ -4,9 +4,12 @@ version = "0.1.0"
 description = "Reads market price messages in naira and local measures, then reprices per measure with deterministic code."
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.142.2",
     "httpx>=0.28.1",
+    "pillow>=12.3.0",
     "python-dotenv>=1.2.4",
     "tinker>=0.32.0",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 [dependency-groups]

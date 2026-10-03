@@ -1,0 +1,73 @@
+/* Derica tokens. Every colour and font in app.css is var(--...) from this file.
+   The light values are the enamel-white sign and sack-ink of a market stall; the dark
+   values are the same palette after sunset. scripts/contrast.py measures every pair. */
+
+:root {
+  --color-ground: #f3f6f5;
+  --color-surface: #fbfcfc;
+  --color-ink: #12202b;
+  --color-muted: #4b5b66;
+  --color-rule: #c9d3d0;
+  --color-edge: #6b7d85;
+  --color-accent: #0e6b5c;
+  --color-accent-ink: #f3f6f5;
+  --color-loss: #a33f17;
+  --color-focus: #0b5a4d;
+  --color-band: #12202b;
+  --color-on-band: #e8eeec;
+  --color-band-muted: #aebdc4;
+
+  --font-display: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --radius: 6px;
+  --touch: 48px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --color-ground: #0f1a22;
+  --color-surface: #16252f;
+  --color-ink: #e8eeec;
+  --color-muted: #9db0b8;
+  --color-rule: #2a3b45;
+  --color-edge: #6e848e;
+  --color-accent: #5fd4b5;
+  --color-accent-ink: #0b1a17;
+  --color-loss: #f08a5d;
+  --color-focus: #5fd4b5;
+  --color-band: #0a1319;
+  --color-on-band: #e8eeec;
+  --color-band-muted: #9db0b8;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-ground: #0f1a22;
+    --color-surface: #16252f;
+    --color-ink: #e8eeec;
+    --color-muted: #9db0b8;
+    --color-rule: #2a3b45;
+    --color-edge: #6e848e;
+    --color-accent: #5fd4b5;
+    --color-accent-ink: #0b1a17;
+    --color-loss: #f08a5d;
+    --color-focus: #5fd4b5;
+    --color-band: #0a1319;
+    --color-on-band: #e8eeec;
+    --color-band-muted: #9db0b8;
+    color-scheme: dark;
+  }
+}

@@ -10,11 +10,12 @@ Status vocabulary used in this repo: LIVE / NEXT / NOT LIVE.
 
 | Piece | Status |
 |---|---|
-| Money parsing, units table, schema, repricer (tested, 75 tests) | LIVE as a library |
+| Money parsing, units table, schema, repricer (tested) | LIVE |
 | Strict rules parser (tidy format only) | LIVE as a library |
 | Rules baseline for messy WhatsApp messages (fitted to the first 18, not yet scored on unseen messages) | LIVE as a library |
-| Tinker fine-tune and eval | NOT LIVE |
-| Web page and price card | NOT LIVE |
+| Tinker fine-tune (Qwen3.5-4B, LoRA) and the five-system eval, results in `DECISIONS.md` and `runs/eval.json` | LIVE |
+| Web page, `/parse`, `/reprice`, price card PNG, run locally with `uv run uvicorn derica.server:app` | LIVE locally |
+| Public URL | NOT LIVE |
 
 The full README (thesis, evidence, how to verify) is written before submission.
 

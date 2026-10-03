@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Derica</title>
+  <meta name="description" content="Paste a supplier's price message and get the new price for every derica, mudu and paint.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preload" href="/static/fonts/BigShouldersStencil.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/static/tokens.css">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <h1 class="wordmark">Derica</h1>
+      <p class="band-line">Paste a supplier's price message. See the new price for every derica, mudu and paint.</p>
+    </div>
+  </header>
+
+  <main class="workbench">
+    <div class="column-in">
+      <section class="intake" aria-labelledby="h-message">
+        <h2 id="h-message">Supplier message</h2>
+        <form id="read-form" novalidate>
+          <label for="message">Paste the message as you got it</label>
+          <textarea id="message" name="message" rows="4" maxlength="280" autocomplete="off" spellcheck="false" aria-describedby="message-help message-error"></textarea>
+          <p id="message-help" class="help"><span id="count">0</span> of 280 characters</p>
+          <p id="message-error" class="error" role="alert"></p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="context">Item, if the message leaves it out</label>
+              <select id="context" name="context">
+                <option value="">Not set</option>
+                <option value="rice">Rice</option>
+                <option value="beans">Beans</option>
+                <option value="garri">Garri</option>
+                <option value="groundnut">Groundnut</option>
+              </select>
+            </div>
+            <button type="submit" id="read-button" class="primary">Read message</button>
+          </div>
+        </form>
+
+        <div id="reading" class="reading" aria-live="polite" aria-atomic="true"></div>
+      </section>
+
+      <section class="stall" aria-labelledby="h-stall">
+        <details id="stall-book">
+          <summary><h2 id="h-stall">Your stall</h2></summary>
+          <div class="stall-body">
+            <div class="field">
+              <label for="shop">Shop name</label>
+              <input id="shop" name="shop" type="text" maxlength="40" autocomplete="off">
+            </div>
+            <p class="help">Prices are worked out for one item at a time. Fill in what the item cost you last time and what you charge now.</p>
+            <div id="book-form"></div>
+            <button type="button" id="sample-stall" class="quiet">Fill with a sample stall</button>
+            <p class="help" id="sample-note" hidden>The sample uses made-up numbers. Replace them with your own.</p>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <section class="board" aria-labelledby="h-board">
+      <h2 id="h-board">New prices</h2>
+      <div id="boards" class="boards" aria-live="polite">
+        <p class="empty" id="boards-empty">Prices you read appear here.</p>
+      </div>
+      <div class="card-actions" id="card-actions" hidden>
+        <button type="button" id="card-button" class="primary">Make price card</button>
+        <p id="card-error" class="error" role="alert"></p>
+        <figure id="card-figure" class="card-figure" hidden>
+          <img id="card-image" alt="Price card for your stall, 1080 by 1920 pixels">
+          <figcaption>
+            <a id="card-save" class="link-button" download="price-card.png">Save image</a>
+            <button type="button" id="card-share" class="quiet" hidden>Share</button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>A small open model, tuned for these messages, reads the text. Plain code works out every price. <a href="https://github.com/JUICEWRLD998/Derica">Source on GitHub</a>.</p>
+  </footer>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
