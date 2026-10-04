@@ -27,7 +27,7 @@ def test_motion_has_a_reduced_motion_fallback_in_css_and_js():
 
 def test_every_asset_the_page_links_exists():
     for ref in re.findall(r'(?:href|src)="/static/([^"]+)"', HTML) + re.findall(r'url\("/static/([^"]+)"\)', CSS):
-        assert (STATIC / ref).is_file(), ref
+        assert (STATIC / ref.split("?")[0]).is_file(), ref
 
 
 def test_the_page_never_assigns_user_text_through_innerhtml():

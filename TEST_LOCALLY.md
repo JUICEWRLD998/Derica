@@ -40,7 +40,7 @@ Open http://localhost:8000/health
 Open http://localhost:8000 in your browser.
 
 1. Click **Try an example**. The prices should count up and settle in a few seconds.
-2. Clear it. Paste: `abeg rice na seventy eight thousand for 50kg` and click **Read message**. Expect rice, 50 kg, ₦78,000.
+2. Clear it. Paste: `Rice is now 78,000 naira for a 50kg bag.` and click **Read message**. Expect rice, 50 kg, ₦78,000.
 3. Paste: `how far, I dey come`. Expect "Not a price. Nothing changed."
 4. Paste: `how much be your rice?`. Expect a refusal, not a price.
 5. Click **Make price card**. A picture should appear.
