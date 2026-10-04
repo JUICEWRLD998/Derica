@@ -2,6 +2,13 @@
 
 Newest first. Each entry carries what was measured or learned, the alternative that was rejected, and where to look.
 
+## 2026-10-04: English-only demo, and a UI pass
+
+- **English-only demo.** The example message, the textarea placeholder, the page copy and the post draft now use plain English: `Rice is now 78,000 naira for a 50kg bag.` Live check against the Tinker model: that message, `Rice: 78k per 50kg bag from today` and `Beans 92k for the 50kg bag, delivery is 3k` all parsed correctly. The model was not retrained and still handles Pidgin. Amina's real messages in `data/real/` and the frozen test sets are untouched, because they are data. Reason: judges read English, and the point of the demo is the arithmetic, which anyone can check.
+- **UI changes.** (1) A "The model understood" strip shows the item, size and price the model read, so the model's one job is visible. (2) The bag line on each sheet now shows old price, new price tag and a change badge (`Up ₦8,000 (11.4%)`); on a phone it no longer wraps awkwardly. (3) Two numbered steps, "1 Supplier message" and "2 New prices". (4) New token `--color-warn-on-band` for the badge; no raw colours in `app.css`.
+- **Checked by looking at it.** Headless Chrome screenshots at 320, 390, 768, 1280 and 1920 px in light mode and 390 and 1280 px in dark. An overflow probe on the panels reported nothing at every width. 167 tests pass and `scripts/contrast.py` reports all pairs pass. Not re-run this pass: the full `ui-score.mjs` score and the blind critic. The two earlier instrument limits still stand.
+- **Local note.** The server does not read `.env`; export `TINKER_API_KEY` first (`TEST_LOCALLY.md`). Without it `/health` returns `"model":false` and the rules reader answers alone.
+
 ## 2026-10-03: eval result. The fine-tune does not beat a well-prompted model on accuracy
 
 `scripts/eval.py`, `runs/eval.json`. Exact-match on the full parse (or null). Frozen real set (Amina, 18), supplied synthetic set (43), fresh generated set (300, seed 99, no overlap with training).

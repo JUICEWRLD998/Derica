@@ -16,6 +16,7 @@
   --color-band: #12202b;
   --color-on-band: #e8eeec;
   --color-band-muted: #aebdc4;
+  --color-warn-on-band: #f2a47d;
 
   --font-display: "Big Shoulders Stencil", "Arial Narrow", sans-serif;
   --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;

@@ -143,7 +143,7 @@ function fillSample() {
 
 function tryExample() {
   fillSample();
-  $("message").value = "abeg rice na seventy eight thousand for 50kg";
+  $("message").value = "Rice is now 78,000 naira for a 50kg bag.";
   $("count").textContent = String($("message").value.length);
   $("context").value = "";
   $("read-form").requestSubmit();
@@ -165,14 +165,20 @@ function eventLine(event) {
 function renderReading(result) {
   const host = $("reading");
   host.replaceChildren();
-  const verdict = el("p", result.event ? "verdict" : "verdict none");
   if (result.event) {
     const [item, unit] = describe(result.event);
-    verdict.append(`Read as ${item}, ${unit}, `, money(result.event.price_ngn), ".");
+    host.appendChild(el("p", "verdict-label", "The model understood"));
+    const facts = el("dl", "facts");
+    [["Item", el("span", "cap", item)], ["Size", el("span", "", unit)], ["Price", money(result.event.price_ngn)]].forEach(([name, value]) => {
+      const cell = el("div", "fact");
+      cell.append(el("dt", "", name), el("dd", "", ""));
+      cell.lastChild.appendChild(value);
+      facts.appendChild(cell);
+    });
+    host.appendChild(facts);
   } else {
-    verdict.textContent = result.note ? "No safe reading. Nothing changed." : "Not a price. Nothing changed.";
+    host.appendChild(el("p", "verdict none", result.note ? "No safe reading. Nothing changed." : "Not a price. Nothing changed."));
   }
-  host.appendChild(verdict);
 
   const seconds = (result.readers.find((r) => r.name === "Derica model") || {}).ms;
   if (result.reader === "derica") {
@@ -316,10 +322,19 @@ function renderBoards(animateItem) {
     const sheet = el("article", "sheet");
     const head = el("header", "sheet-head");
     head.appendChild(el("h3", "item", board.item));
-    const bag = el("p", "bag");
+    const bag = el("div", "bag");
     const tag = money(board.newBag);
     tag.classList.add("tag");
-    bag.append("50 kg bag, was ", money(board.oldBag), " now ", tag);
+    const change = board.newBag - board.oldBag;
+    const pct = board.oldBag ? Math.abs((change / board.oldBag) * 100).toFixed(1) : null;
+    const delta = el(
+      "span",
+      change > 0 ? "delta up" : change < 0 ? "delta down" : "delta flat",
+      change === 0 ? "No change" : `${change > 0 ? "Up" : "Down"} ${naira(Math.abs(change))}${pct ? ` (${pct}%)` : ""}`,
+    );
+    const prior = el("span", "prior");
+    prior.append("50 kg bag, was ", money(board.oldBag));
+    bag.append(prior, tag, delta);
     head.appendChild(bag);
     sheet.appendChild(head);
 
